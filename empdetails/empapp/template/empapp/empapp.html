@@ -1,0 +1,38 @@
+
+<html >
+{% load static %}
+<head>
+
+    <title>Welcome to our database</title>
+
+</head>
+<body>
+<h2>Employee details</h2>
+
+    <table border="1">
+
+
+        <tr>
+            <th>empno</th>
+            <th>ename</th>
+            <th>salary</th>
+            <th>designation</th>
+
+        </tr>
+        {% if emp_list %}
+         {% for empapp in emp_list %}
+
+        <tr>
+            <td>{{empapp.empno}}</td>
+            <td>{{empapp.ename}}</td>
+            <td>{{empapp.salary}}</td>
+            <td>{{empapp.designation}}</td>
+        </tr>
+        {% endfor %}
+        {% endif %}
+
+
+    </table>
+
+</body>
+</html>

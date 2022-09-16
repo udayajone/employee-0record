@@ -1,0 +1,35 @@
+
+<html>
+{% extends 'empapp/base.html' %}
+{% block content %}
+<h1>Employee details</h1>
+<p align="center">
+    <a href="/Search" ><button type= "button">Search </button></a>
+</p>
+<table border="1" width="850" height="200">
+<tr>
+<th> empno</th>
+<th>ename</th>
+<th>salary</th>
+<th>designation</th>
+</tr>
+     {% if emp_list %}
+    {% for st in emp_list %}
+
+<tr>
+
+    <td>{{st.empno}}</td>
+    <td>{{st.ename}}</td>
+    <td>{{st.salary}}</td>
+    <td>{{st.designation}}</td>
+    <td><a href="/update/{{st.id}}">update</a> &nbsp; &nbsp; <a href="/delete/{{st.id}}"> Delete</a></td>
+    </tr>
+
+{% endfor %}
+{% endif %}
+</table>
+
+<a href="/create" ><button type= "button">Add new Employee </button></a>
+{% endblock%}
+
+</html>

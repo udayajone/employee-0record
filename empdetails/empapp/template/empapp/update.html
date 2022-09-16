@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<html>
+{% extends 'empapp/base.html' %}
+{% block content %}
+<h1> update employee details</h1>
+<form method = 'POST'>
+empno : <input type ="text" name="empno" value ="{{st.empno}}">
+ename  : <input type ="text" name="ename" value ="{{st.ename}}">
+salary: <input type ="text" name="salary" value ="{{st.salary}}">
+designation: <input type ="text" name="designation" value ="{{st.designation}}">
+    {% csrf_token %}
+     <input type='submit' value="Update employee">
+</form>
+{% endblock %}
+</html>
+
